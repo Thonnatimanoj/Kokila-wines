@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sampoorna AC Hotel</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#0b0b0b;color:#fff;line-height:1.5}
+header{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.96);border-bottom:1px solid #3b2b10}
+nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{font-family:Georgia,serif;color:#f5c451;font-size:24px;font-weight:bold}
+nav a{color:#fff;text-decoration:none;margin-left:22px;font-size:14px}
+nav a:hover{color:#f5c451}
+.hero{min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at center,#33240d 0,#15120c 32%,#080808 70%)}
+.logo{width:145px;height:145px;border:3px solid #f5c451;border-radius:50%;display:grid;place-items:center;margin:0 auto 25px;color:#f5c451;font-size:65px;font-family:Georgia,serif;box-shadow:0 0 35px rgba(245,196,81,.15)}
+.hero h1{font:700 clamp(42px,8vw,82px) Georgia,serif;color:#f5c451;letter-spacing:2px}
+.hero h2{font-size:22px;letter-spacing:5px;margin-top:4px}
+.hero p{max-width:650px;margin:18px auto;color:#ddd}
+.btn{display:inline-block;background:#f5c451;color:#111;padding:13px 24px;border-radius:30px;text-decoration:none;font-weight:bold;margin:8px}
+.btn.outline{background:transparent;color:#f5c451;border:1px solid #f5c451}
+section{max-width:1150px;margin:auto;padding:70px 20px}
+.title{text-align:center;color:#f5c451;font:700 38px Georgia,serif;margin-bottom:10px}
+.sub{text-align:center;color:#aaa;margin-bottom:35px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#171717;border:1px solid #35270f;border-radius:16px;padding:24px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#f5c451}
+.icon{font-size:40px;margin-bottom:10px}
+.card h3{color:#f5c451;margin-bottom:8px}
+.price{font-weight:bold;margin:12px 0;color:#fff}
+.menu-btn{border:0;background:#f5c451;padding:9px 15px;border-radius:20px;font-weight:bold;cursor:pointer}
+.about{background:#111;border-radius:24px;border:1px solid #30230e}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-box{background:#151515;padding:25px;border-radius:16px;border:1px solid #35270f}
+footer{text-align:center;padding:25px;background:#050505;color:#888;border-top:1px solid #30230e}
+#cart{position:fixed;right:18px;bottom:18px;background:#f5c451;color:#111;border-radius:50px;padding:13px 20px;font-weight:bold;box-shadow:0 5px 25px #0008}
+@media(max-width:650px){nav div:last-child a{margin-left:9px}.contact{grid-template-columns:1fr}.hero{min-height:72vh}}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="brand">SAMPOORNA</div>
+<div>
+<a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div>
+<div class="logo">S</div>
+<h1>SAMPOORNA</h1>
+<h2>AC HOTEL</h2>
+<p>Fast Foods & Rich Foods — delicious taste, quality ingredients and a comfortable dining experience.</p>
+<a class="btn" href="#menu">Explore Menu</a>
+<a class="btn outline" href="#contact">Contact Us</a>
+</div>
+</section>
+
+<section id="menu">
+<h2 class="title">Our Special Menu</h2>
+<p class="sub">Freshly prepared favourites for every mood.</p>
+<div class="cards">
+<div class="card"><div class="icon">🍔</div><h3>Classic Burger</h3><p>Juicy, crispy and loaded with flavour.</p><div class="price">₹149</div><button class="menu-btn" onclick="add('Classic Burger',149)">Add to Order</button></div>
+<div class="card"><div class="icon">🍕</div><h3>Cheese Pizza</h3><p>Hot pizza with rich cheese and fresh toppings.</p><div class="price">₹249</div><button class="menu-btn" onclick="add('Cheese Pizza',249)">Add to Order</button></div>
+<div class="card"><div class="icon">🍗</div><h3>Chicken Special</h3><p>Our signature rich and spicy chicken dish.</p><div class="price">₹299</div><button class="menu-btn" onclick="add('Chicken Special',299)">Add to Order</button></div>
+<div class="card"><div class="icon">🍜</div><h3>Special Noodles</h3><p>Hot, tasty noodles prepared with fresh vegetables.</p><div class="price">₹179</div><button class="menu-btn" onclick="add('Special Noodles',179)">Add to Order</button></div>
+<div class="card"><div class="icon">🍛</div><h3>Sampoorna Meals</h3><p>A satisfying full meal with our signature flavours.</p><div class="price">₹199</div><button class="menu-btn" onclick="add('Sampoorna Meals',199)">Add to Order</button></div>
+<div class="card"><div class="icon">🥤</div><h3>Cool Drinks</h3><p>Refreshing drinks to complete your meal.</p><div class="price">₹69</div><button class="menu-btn" onclick="add('Cool Drink',69)">Add to Order</button></div>
+</div>
+</section>
+
+<section id="about">
+<div class="about">
+<h2 class="title">Welcome to Sampoorna</h2>
+<p style="text-align:center;color:#ccc;max-width:800px;margin:auto">
+Sampoorna AC Hotel brings together fast foods and rich foods under one roof.
+Our goal is simple: great taste, good quality and a comfortable place for families,
+friends and food lovers.
+</p>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="title">Visit Us</h2>
+<p class="sub">We would love to serve you.</p>
+<div class="contact">
+<div class="contact-box"><h3 style="color:#f5c451">📍 Address</h3><p>Replace with your hotel address</p></div>
+<div class="contact-box"><h3 style="color:#f5c451">📞 Contact</h3><p>+91 XXXXX XXXXX</p><p>Open daily: 10:00 AM – 11:00 PM</p></div>
+</div>
+</section>
+</main>
+
+<div id="cart">🛒 Order: <span id="count">0</span> | ₹<span id="total">0</span></div>
+
+<footer>© 2026 Sampoorna AC Hotel • Fast Foods & Rich Foods</footer>
+
+<script>
+let count=0,total=0;
+function add(name,price){
+ count++; total+=price;
+ document.getElementById('count').textContent=count;
+ document.getElementById('total').textContent=total;
+ alert(name+" added to your order!");
+}
+</script>
+</body>
+</html>
