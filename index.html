@@ -2,110 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sampoorna AC Hotel</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Kokila Wines Bar & Restaurant - complete website prototype">
+<title>Kokila Wines Bar & Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#0b0b0b;color:#fff;line-height:1.5}
-header{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.96);border-bottom:1px solid #3b2b10}
-nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-.brand{font-family:Georgia,serif;color:#f5c451;font-size:24px;font-weight:bold}
-nav a{color:#fff;text-decoration:none;margin-left:22px;font-size:14px}
-nav a:hover{color:#f5c451}
-.hero{min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at center,#33240d 0,#15120c 32%,#080808 70%)}
-.logo{width:145px;height:145px;border:3px solid #f5c451;border-radius:50%;display:grid;place-items:center;margin:0 auto 25px;color:#f5c451;font-size:65px;font-family:Georgia,serif;box-shadow:0 0 35px rgba(245,196,81,.15)}
-.hero h1{font:700 clamp(42px,8vw,82px) Georgia,serif;color:#f5c451;letter-spacing:2px}
-.hero h2{font-size:22px;letter-spacing:5px;margin-top:4px}
-.hero p{max-width:650px;margin:18px auto;color:#ddd}
-.btn{display:inline-block;background:#f5c451;color:#111;padding:13px 24px;border-radius:30px;text-decoration:none;font-weight:bold;margin:8px}
-.btn.outline{background:transparent;color:#f5c451;border:1px solid #f5c451}
-section{max-width:1150px;margin:auto;padding:70px 20px}
-.title{text-align:center;color:#f5c451;font:700 38px Georgia,serif;margin-bottom:10px}
-.sub{text-align:center;color:#aaa;margin-bottom:35px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#171717;border:1px solid #35270f;border-radius:16px;padding:24px;transition:.25s}
-.card:hover{transform:translateY(-5px);border-color:#f5c451}
-.icon{font-size:40px;margin-bottom:10px}
-.card h3{color:#f5c451;margin-bottom:8px}
-.price{font-weight:bold;margin:12px 0;color:#fff}
-.menu-btn{border:0;background:#f5c451;padding:9px 15px;border-radius:20px;font-weight:bold;cursor:pointer}
-.about{background:#111;border-radius:24px;border:1px solid #30230e}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-.contact-box{background:#151515;padding:25px;border-radius:16px;border:1px solid #35270f}
-footer{text-align:center;padding:25px;background:#050505;color:#888;border-top:1px solid #30230e}
-#cart{position:fixed;right:18px;bottom:18px;background:#f5c451;color:#111;border-radius:50px;padding:13px 20px;font-weight:bold;box-shadow:0 5px 25px #0008}
-@media(max-width:650px){nav div:last-child a{margin-left:9px}.contact{grid-template-columns:1fr}.hero{min-height:72vh}}
+:root{--bg:#080706;--panel:#12100e;--panel2:#191512;--gold:#d9a83f;--gold2:#f2ce78;--wine:#6d101d;--text:#f7efe0;--muted:#aaa093;--line:#34291e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Montserrat,Arial,sans-serif;line-height:1.6}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,7,6,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1250px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo-word{font:700 36px "Cormorant Garamond";color:var(--gold2)}nav{display:flex;gap:22px}nav a{font-size:12px;text-transform:uppercase;letter-spacing:1.3px;color:#ddd}nav a:hover{color:var(--gold2)}.nav-actions{display:flex;gap:10px}.icon-btn,.gold-btn{border:1px solid var(--gold);background:transparent;color:var(--gold2);padding:10px 14px;cursor:pointer;border-radius:3px}.gold-btn{background:linear-gradient(135deg,#e8bb58,#ad741c);color:#120e09;border:0;font-weight:700}.cart-count{display:inline-flex;min-width:20px;height:20px;align-items:center;justify-content:center;border-radius:50%;background:var(--wine);color:white;font-size:11px;margin-left:4px}.hamb{display:none;background:none;border:0;color:var(--gold2);font-size:25px}
+.hero{min-height:100vh;padding:150px 7% 70px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;background:radial-gradient(circle at 80% 40%,rgba(109,16,29,.4),transparent 35%),linear-gradient(135deg,#080706,#17100c)}.hero h1{font:700 clamp(58px,8vw,105px)/.9 "Cormorant Garamond";margin:10px 0 25px}.hero h1 span,.section-title span{color:var(--gold2)}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:4px;font-size:11px;font-weight:700}.hero p{max-width:620px;color:var(--muted);font-size:17px}.hero-buttons{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.hero-logo{text-align:center}.hero-logo img{width:min(440px,85%);filter:drop-shadow(0 25px 40px #000);animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-9px)}}
+section{padding:95px 7%;border-top:1px solid rgba(255,255,255,.04)}.section-head{text-align:center;margin-bottom:42px}.section-title{font:700 clamp(44px,5vw,68px)/1 "Cormorant Garamond";margin:7px 0}.muted{color:var(--muted)}
+.about-grid,.contact-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.about-box{padding:35px;border:1px solid var(--line);background:linear-gradient(145deg,#15110e,#0d0b09)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}.stat{padding:20px 8px;text-align:center;border:1px solid var(--line)}.stat b{display:block;color:var(--gold2);font:700 32px "Cormorant Garamond"}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:30px}.filter{padding:10px 16px;background:#0f0d0b;color:#bbb;border:1px solid var(--line);cursor:pointer}.filter.active,.filter:hover{color:#111;background:var(--gold2)}
+.menu-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.food{position:relative;padding:24px;background:var(--panel);border:1px solid var(--line);transition:.25s}.food:hover{transform:translateY(-5px);border-color:var(--gold)}.food .food-img{height:160px;display:grid;place-items:center;font-size:65px;background:linear-gradient(135deg,#251912,#58111a);margin:-24px -24px 20px}.food h3{font:700 28px "Cormorant Garamond";margin:0;color:var(--gold2)}.food p{font-size:13px;color:var(--muted);min-height:42px}.price-row{display:flex;justify-content:space-between;align-items:center}.price{font-weight:700;color:var(--gold)}.add{border:1px solid var(--gold);background:transparent;color:var(--gold2);padding:8px 12px;cursor:pointer}.add:hover{background:var(--gold);color:#111}
+.special{background:linear-gradient(100deg,rgba(109,16,29,.8),rgba(109,16,29,.2)),#100c0a}.special-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.special-card{padding:45px;border:1px solid var(--gold);background:rgba(0,0,0,.2)}.special-card h3{font:700 55px "Cormorant Garamond";margin:8px 0;color:var(--gold2)}
+.gallery-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:210px;gap:12px}.gallery-item{display:flex;align-items:end;padding:20px;font:600 25px "Cormorant Garamond";background:linear-gradient(135deg,#241913,#7d4b28,#160c09);position:relative;overflow:hidden}.gallery-item:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(0,0,0,.75))}.gallery-item span{position:relative;z-index:2}.g1{grid-row:span 2;background:linear-gradient(135deg,#1c120e,#8a5d33,#2b0e12)}.g2{background:linear-gradient(135deg,#130c0b,#65111d)}.g3{background:linear-gradient(135deg,#261b14,#b27d39)}.g4{background:linear-gradient(135deg,#0f0d0b,#463224)}
+.reviews{background:#0d0b09}.review-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{padding:28px;border:1px solid var(--line);background:var(--panel)}.stars{color:var(--gold2);letter-spacing:3px}.review b{display:block;margin-top:18px}
+.contact-form{padding:32px;background:var(--panel);border:1px solid var(--line)}.contact-form input,.contact-form select,.contact-form textarea{width:100%;margin:0 0 12px;padding:13px;background:#080706;color:#eee;border:1px solid #3a2e22;outline:none}.contact-form textarea{min-height:110px;resize:vertical}.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--gold)}.form-msg{color:var(--gold2);font-size:13px;min-height:20px;margin-top:10px}.details p{color:#ccc}
+footer{padding:35px 7%;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;color:#8d857b;font-size:12px}footer img{width:65px}
+
+.modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{width:min(520px,100%);background:#100d0b;border:1px solid var(--gold);padding:30px;position:relative}.close{position:absolute;right:15px;top:10px;background:none;border:0;color:#aaa;font-size:26px;cursor:pointer}.cart-item{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-total{display:flex;justify-content:space-between;font-weight:700;color:var(--gold2);font-size:18px;padding:18px 0}
+@media(max-width:850px){nav{display:none}.hamb{display:block}.nav{position:relative}.nav.open nav{display:flex;position:absolute;top:64px;left:0;right:0;background:#0b0908;padding:20px;flex-direction:column}.hero{grid-template-columns:1fr;text-align:center}.hero-logo{order:-1}.hero-logo img{width:280px}.about-grid,.contact-grid,.special-grid{grid-template-columns:1fr}.menu-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.g1{grid-row:span 1}.review-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:15px;text-align:center}}
+@media(max-width:560px){.menu-grid,.gallery-grid{grid-template-columns:1fr}.hero{padding-left:5%;padding-right:5%}.nav{padding:12px 15px}.logo-word{font-size:30px}.nav-actions .gold-btn{display:none}}
 </style>
 </head>
 <body>
-
 <header>
+<div class="nav" id="navbar">
+<a class="logo-word" href="#home">Kokila</a>
 <nav>
-<div class="brand">SAMPOORNA</div>
-<div>
-<a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#contact">Contact</a>
-</div>
+<a href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#specials">Specials</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
 </nav>
+<div class="nav-actions">
+<button class="icon-btn" id="cartBtn">🛒 <span class="cart-count" id="cartCount">0</span></button>
+<button class="gold-btn" onclick="openBooking()">Reserve</button>
+</div>
+<button class="hamb" id="hamb">☰</button>
+</div>
 </header>
 
 <main>
 <section class="hero" id="home">
 <div>
-<div class="logo">S</div>
-<h1>SAMPOORNA</h1>
-<h2>AC HOTEL</h2>
-<p>Fast Foods & Rich Foods — delicious taste, quality ingredients and a comfortable dining experience.</p>
-<a class="btn" href="#menu">Explore Menu</a>
-<a class="btn outline" href="#contact">Contact Us</a>
+<div class="eyebrow">Wines • Bar • Restaurant</div>
+<h1>Good food.<br><span>Great evenings.</span></h1>
+<p>Welcome to Kokila Wines Bar & Restaurant — a premium destination for delicious food, refreshing drinks and unforgettable moments.</p>
+<div class="hero-buttons"><a class="gold-btn" href="#menu">Explore Menu</a><a class="icon-btn" href="#contact">Book a Table</a></div>
+</div>
+<div class="hero-logo"><img src="logo.png" alt="Kokila Wines Bar and Restaurant"></div>
+</section>
+
+<section id="about">
+<div class="about-grid">
+<div><div class="eyebrow">Our Story</div><h2 class="section-title">Where <span>flavour</span> meets atmosphere.</h2><p class="muted">Kokila is designed for relaxed dining, celebrations and nights with friends. From carefully prepared starters to satisfying main courses and a lively bar, every visit is meant to feel special.</p><div class="stats"><div class="stat"><b>20+</b>Menu Items</div><div class="stat"><b>11AM</b>Opening</div><div class="stat"><b>7 Days</b>Open</div></div></div>
+<div class="about-box"><div class="eyebrow">Why Kokila?</div><h3 style="font:700 42px 'Cormorant Garamond';color:var(--gold2)">Eat. Drink. Celebrate.</h3><p class="muted">A stylish place for family dinners, casual meetups, birthdays, parties and special occasions.</p><p>✓ Premium ambience<br>✓ Freshly prepared food<br>✓ Friendly service<br>✓ Bar & restaurant experience</p></div>
 </div>
 </section>
 
 <section id="menu">
-<h2 class="title">Our Special Menu</h2>
-<p class="sub">Freshly prepared favourites for every mood.</p>
-<div class="cards">
-<div class="card"><div class="icon">🍔</div><h3>Classic Burger</h3><p>Juicy, crispy and loaded with flavour.</p><div class="price">₹149</div><button class="menu-btn" onclick="add('Classic Burger',149)">Add to Order</button></div>
-<div class="card"><div class="icon">🍕</div><h3>Cheese Pizza</h3><p>Hot pizza with rich cheese and fresh toppings.</p><div class="price">₹249</div><button class="menu-btn" onclick="add('Cheese Pizza',249)">Add to Order</button></div>
-<div class="card"><div class="icon">🍗</div><h3>Chicken Special</h3><p>Our signature rich and spicy chicken dish.</p><div class="price">₹299</div><button class="menu-btn" onclick="add('Chicken Special',299)">Add to Order</button></div>
-<div class="card"><div class="icon">🍜</div><h3>Special Noodles</h3><p>Hot, tasty noodles prepared with fresh vegetables.</p><div class="price">₹179</div><button class="menu-btn" onclick="add('Special Noodles',179)">Add to Order</button></div>
-<div class="card"><div class="icon">🍛</div><h3>Sampoorna Meals</h3><p>A satisfying full meal with our signature flavours.</p><div class="price">₹199</div><button class="menu-btn" onclick="add('Sampoorna Meals',199)">Add to Order</button></div>
-<div class="card"><div class="icon">🥤</div><h3>Cool Drinks</h3><p>Refreshing drinks to complete your meal.</p><div class="price">₹69</div><button class="menu-btn" onclick="add('Cool Drink',69)">Add to Order</button></div>
-</div>
+<div class="section-head"><div class="eyebrow">Taste Kokila</div><h2 class="section-title">Our <span>Menu</span></h2><p class="muted">Add your favourites to the demo cart.</p></div>
+<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="starters">Starters</button><button class="filter" data-filter="main">Main Course</button><button class="filter" data-filter="fast">Fast Food</button><button class="filter" data-filter="drinks">Drinks</button></div>
+<div class="menu-grid" id="menuGrid"></div>
 </section>
 
-<section id="about">
-<div class="about">
-<h2 class="title">Welcome to Sampoorna</h2>
-<p style="text-align:center;color:#ccc;max-width:800px;margin:auto">
-Sampoorna AC Hotel brings together fast foods and rich foods under one roof.
-Our goal is simple: great taste, good quality and a comfortable place for families,
-friends and food lovers.
-</p>
-</div>
+<section class="special" id="specials">
+<div class="special-grid"><div><div class="eyebrow">Chef's Choice</div><h2 class="section-title">Today's <span>Special</span></h2><p class="muted">Ask our team about today's chef-selected dishes and special combinations.</p></div><div class="special-card"><div class="eyebrow">Kokila Special</div><h3>Family Dinner Combo</h3><p>Starters + main course + sides for a satisfying table experience.</p><h4 style="color:var(--gold2);font-size:24px">From ₹699</h4><a class="gold-btn" href="#menu">Order Now</a></div></div>
+</section>
+
+<section id="gallery">
+<div class="section-head"><div class="eyebrow">The Experience</div><h2 class="section-title">Inside <span>Kokila</span></h2></div>
+<div class="gallery-grid"><div class="gallery-item g1"><span>Premium Dining</span></div><div class="gallery-item g2"><span>Bar</span></div><div class="gallery-item g3"><span>Food</span></div><div class="gallery-item g4"><span>Celebrations</span></div></div>
+</section>
+
+<section class="reviews">
+<div class="section-head"><div class="eyebrow">Guest Love</div><h2 class="section-title">What people <span>say</span></h2></div>
+<div class="review-grid"><div class="review"><div class="stars">★★★★★</div><p>“Great place for an evening out. The food and ambience make it worth visiting.”</p><b>— Guest Review</b></div><div class="review"><div class="stars">★★★★★</div><p>“Lovely atmosphere and a good choice for family and friends.”</p><b>— Happy Customer</b></div><div class="review"><div class="stars">★★★★★</div><p>“A stylish local spot with tasty food and a relaxed vibe.”</p><b>— Regular Guest</b></div></div>
 </section>
 
 <section id="contact">
-<h2 class="title">Visit Us</h2>
-<p class="sub">We would love to serve you.</p>
-<div class="contact">
-<div class="contact-box"><h3 style="color:#f5c451">📍 Address</h3><p>Replace with your hotel address</p></div>
-<div class="contact-box"><h3 style="color:#f5c451">📞 Contact</h3><p>+91 XXXXX XXXXX</p><p>Open daily: 10:00 AM – 11:00 PM</p></div>
+<div class="contact-grid">
+<div><div class="eyebrow">Come Visit Us</div><h2 class="section-title">Make your evening <span>special.</span></h2><p class="muted">For table reservations, parties, events and enquiries, contact Kokila.</p><div class="details"><p>📍 Your Address, Your City</p><p>📞 +91 98765 43210</p><p>✉️ hello@kokila.com</p><p>🕐 Daily: 11:00 AM – 11:00 PM</p></div></div>
+<form class="contact-form" id="contactForm"><h3 style="font:700 36px 'Cormorant Garamond';color:var(--gold2)">Send an Enquiry</h3><input required id="cname" placeholder="Your name"><input required id="cphone" placeholder="Phone number"><input type="email" id="email" placeholder="Email address"><textarea id="note" placeholder="Message"></textarea><button class="gold-btn" type="submit">Send Message</button><div class="form-msg" id="contactMsg"></div></form>
 </div>
 </section>
 </main>
 
-<div id="cart">🛒 Order: <span id="count">0</span> | ₹<span id="total">0</span></div>
+<footer><img src="logo.png" alt="Kokila"><span>© <span id="year"></span> Kokila Wines Bar & Restaurant</span><span>Made for a premium dining experience</span></footer>
 
-<footer>© 2026 Sampoorna AC Hotel • Fast Foods & Rich Foods</footer>
+<div class="modal" id="cartModal"><div class="modal-box"><button class="close" onclick="closeModal('cartModal')">×</button><h2 class="section-title">Your <span>Cart</span></h2><div id="cartItems"></div><div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div><button class="gold-btn" style="width:100%" onclick="checkout()">Place Demo Order</button></div></div>
+
+<div class="modal" id="bookingModal"><div class="modal-box"><button class="close" onclick="closeModal('bookingModal')">×</button><h2 class="section-title">Reserve a <span>Table</span></h2><form id="bookingForm" class="contact-form" style="padding:0;border:0"><input id="bname" required placeholder="Your name"><input id="bphone" required placeholder="Phone number"><input id="bdate" type="date" required><input id="btime" type="time" required><select id="bguests" required><option value="">Guests</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select><button class="gold-btn" style="width:100%">Request Reservation</button><div class="form-msg" id="bookingMsg"></div></form></div></div>
 
 <script>
-let count=0,total=0;
-function add(name,price){
- count++; total+=price;
- document.getElementById('count').textContent=count;
- document.getElementById('total').textContent=total;
- alert(name+" added to your order!");
-}
+const products=[
+{name:"Chicken 65",cat:"starters",price:249,icon:"🍗",desc:"Crispy, spicy and freshly prepared."},
+{name:"Paneer Tikka",cat:"starters",price:229,icon:"🧀",desc:"Char-grilled paneer with aromatic spices."},
+{name:"Veg Biryani",cat:"main",price:199,icon:"🍛",desc:"Fragrant rice, vegetables and rich spices."},
+{name:"Chicken Biryani",cat:"main",price:299,icon:"🍗",desc:"Aromatic biryani with tender chicken."},
+{name:"Butter Chicken",cat:"main",price:279,icon:"🍲",desc:"Creamy tomato gravy with tender chicken."},
+{name:"Classic Burger",cat:"fast",price:179,icon:"🍔",desc:"Loaded burger with crispy sides."},
+{name:"French Fries",cat:"fast",price:119,icon:"🍟",desc:"Golden, crispy and perfect to share."},
+{name:"Fresh Lime",cat:"drinks",price:79,icon:"🍋",desc:"Refreshing sweet or salty lime drink."},
+{name:"Mocktail",cat:"drinks",price:149,icon:"🍹",desc:"Colourful refreshing house special."}
+];
+let cart=[];
+const menuGrid=document.getElementById("menuGrid");
+function renderMenu(filter="all"){menuGrid.innerHTML=products.filter(p=>filter==="all"||p.cat===filter).map((p,i)=>`<article class="food"><div class="food-img">${p.icon}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-row"><span class="price">₹${p.price}</span><button class="add" onclick="addToCart(${products.indexOf(p)})">Add +</button></div></article>`).join("")}
+renderMenu();
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderMenu(b.dataset.filter)});
+function addToCart(i){cart.push(products[i]);updateCart();document.getElementById("cartBtn").animate([{transform:"scale(1)"},{transform:"scale(1.15)"},{transform:"scale(1)"}],{duration:300})}
+function updateCart(){document.getElementById("cartCount").textContent=cart.length;document.getElementById("cartItems").innerHTML=cart.length?cart.map((p,i)=>`<div class="cart-item"><span>${p.icon} ${p.name}</span><span>₹${p.price} <button onclick="removeCart(${i})" style="background:none;border:0;color:#aaa;cursor:pointer">×</button></span></div>`).join(""):"<p class='muted'>Your cart is empty.</p>";document.getElementById("cartTotal").textContent="₹"+cart.reduce((s,p)=>s+p.price,0)}
+function removeCart(i){cart.splice(i,1);updateCart()}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+document.getElementById("cartBtn").onclick=()=>document.getElementById("cartModal").classList.add("show");
+function checkout(){if(!cart.length)return alert("Your cart is empty.");alert("Demo order received! Connect this button to your backend/payment system.");cart=[];updateCart();closeModal("cartModal")}
+function openBooking(){document.getElementById("bookingModal").classList.add("show")}
+document.getElementById("bookingForm").onsubmit=e=>{e.preventDefault();document.getElementById("bookingMsg").textContent="Reservation request submitted successfully (demo).";e.target.reset()}
+document.getElementById("contactForm").onsubmit=e=>{e.preventDefault();document.getElementById("contactMsg").textContent="Thank you! Your enquiry has been received (demo).";e.target.reset()}
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("hamb").onclick=()=>document.getElementById("navbar").classList.toggle("open");
+document.querySelectorAll("nav a").forEach(a=>a.onclick=()=>document.getElementById("navbar").classList.remove("open"));
+document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove("show")});
 </script>
 </body>
 </html>
